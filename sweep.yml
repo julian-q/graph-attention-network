@@ -1,0 +1,35 @@
+program: train.py
+metric:
+  name: accuracy_0
+  goal: maximize
+metric:
+  name: accuracy_1
+  goal: maximize
+metric:
+  name: loss
+  goal: minimize
+parameters:
+  learning_rate:
+    distribution: uniform
+    min: 0.00001
+    max: 0.1
+  dropout:
+    distribution: uniform
+    min: 0
+    max: 0.6
+  hidden_channels_1:
+    distribution: int_uniform
+    min: 16
+    max: 256
+  hidden_channels_2:
+    distribution: int_uniform
+    min: 16
+    max: 256
+  hidden_channels_3:
+    distribution: int_uniform
+    min: 16
+    max: 256
+  heads:
+    distribution: int_uniform
+    min: 1
+    max: 16
